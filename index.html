@@ -49,7 +49,7 @@
       .cart {
         width: 60px;
         cursor: pointer;
-        animation: delay 3s linear;
+        animation: delay 1s linear;
       }
       .lists {
         list-style-type: none;
@@ -58,7 +58,7 @@
         justify-content: flex-start;
         align-items: center;
         gap: 60px;
-        animation: delay 2s linear;
+        animation: delay 1s linear;
       }
       .lists li {
         transition: 300ms;
@@ -99,6 +99,14 @@
         cursor: pointer;
         border: none;
         background: linear-gradient(to bottom right, #008cff, #e100ff);
+        transition: 0.5s;
+      }
+      button:hover {
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+        border-bottom: 8px solid #008cff;
+        border-left: 8px solid #e100ff;
+        border-top-left-radius: 12px;
+        border-bottom-right-radius: 8px;
       }
       .container {
         width: 80%;
@@ -201,7 +209,7 @@
       }
       h3 {
         font-family: poppins;
-        font-size: 1.4em;
+        font-size: 1.5em;
         margin: 20px;
       }
 
@@ -223,7 +231,7 @@
         bottom: -10px;
         height: 8px;
         width: 0;
-        background-color: #008cff;
+        background-color: #e100ff;
         transition: 1s;
       }
       .underline:hover::after {
@@ -241,6 +249,81 @@
         margin-left: 30px;
         font-family: poppins;
       }
+      .about-Page h3 {
+        background-image: linear-gradient(
+          to bottom right,
+          rgb(0, 0, 0),
+          rgb(255, 149, 0)
+        );
+        background-clip: text;
+        color: transparent;
+      }
+      .grid div {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        margin: 2em;
+        width: 300px;
+      }
+      .grid {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        margin: auto;
+      }
+      .contact-container {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+        box-sizing: border-box;
+        margin: auto;
+        margin-top: 2em;
+        margin-bottom: 2em;
+      }
+
+      .contact-container h1 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #333;
+      }
+
+      .form-group {
+        margin-bottom: 1rem;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 150px;
+      }
+      .footer {
+        width: 100%;
+        padding: 0.8rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .footer:hover {
+        background-color: #0056b3;
+      }
     </style>
   </head>
   <body>
@@ -253,7 +336,7 @@
           <a href="#"><li>Home</li></a>
           <a href="#abt"><li>About</li></a>
           <a href="#coll"><li>Collections</li></a>
-          <a href="#"><li>Category</li></a>
+          <a href="#contact"><li>Contact us</li></a>
         </ul>
         <div class="cart">
           <img src="Assets/cart.png" alt="" />
@@ -360,5 +443,27 @@
         <p>₹1,199</p>
       </div>
     </section>
+    <section class="center" id="contact">
+      <h1 class="underline">Contact Us</h1>
+    </section>
+    <div class="contact-container">
+      <h1>Contact Us</h1>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="footer">Send Message</button>
+      </form>
+    </div>
   </body>
 </html>
