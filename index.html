@@ -18,11 +18,14 @@
         padding: 0;
         box-sizing: border-box;
       }
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         position: relative;
         width: 100%;
         height: 100vh;
-        overflow: hidden;
+        /* overflow: hidden; */
         background-image: url(Assets/background.png);
         background-size: cover;
       }
@@ -73,7 +76,7 @@
       .right {
         width: 610px;
         transform: scale(1);
-/*         animation: scale 3s linear; */
+        /* animation: scale 3s linear; */
       }
       .left {
         margin-left: 100px;
@@ -111,17 +114,133 @@
         gap: 30px;
         cursor: pointer;
       }
+      /* unvisited link */
+      .social-media a:link {
+        color: rgb(105, 105, 105);
+        text-decoration: none;
+      }
 
+      /* visited link */
+      .social-media a:visited {
+        color: green;
+        text-decoration: none;
+      }
+
+      /* mouse over link */
+      .social-media a:hover {
+        color: red;
+        text-decoration: none;
+      }
+
+      /* selected link */
+      .social-media a:active {
+        color: rgb(255, 0, 251);
+        text-decoration: none;
+      }
+      .lists a {
+        text-decoration: none;
+        color: black;
+      }
       @keyframes delay {
         0% {
           transform: translateY(-100px);
         }
       }
-/*       @keyframes scale {
+      @keyframes scale {
         0% {
           transform: scale(0);
         }
-      } */
+      }
+      /*  */
+      .collection {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        padding: 2rem;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        padding: 1rem;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card img {
+        width: 50%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .card h2 {
+        margin: 1rem 0 0.5rem;
+        font-size: 1.2rem;
+      }
+
+      .card p {
+        font-size: 1rem;
+        color: #e91e63;
+      }
+      /*  */
+      .center {
+        text-align: center;
+        font-size: 2em;
+      }
+      .about_style {
+        padding: 50px;
+      }
+      section h1 {
+        font-family: "Lilita One", cursive;
+      }
+      h3 {
+        font-family: poppins;
+        font-size: 1.4em;
+        margin: 20px;
+      }
+
+      p {
+        margin: 20px;
+      }
+      .underline {
+        display: inline-block;
+        padding: 20px;
+        transition: all 1s;
+        height: 18vh;
+        cursor: pointer;
+        position: relative;
+      }
+      .underline::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        height: 8px;
+        width: 0;
+        background-color: #008cff;
+        transition: 1s;
+      }
+      .underline:hover::after {
+        width: 100%;
+      }
+      .about-Page {
+        padding: 50px;
+      }
+      .about-Page p {
+        width: 750px;
+        font-family: cursive;
+        font-size: 20px;
+      }
+      .lists-todo {
+        margin-left: 30px;
+        font-family: poppins;
+      }
     </style>
   </head>
   <body>
@@ -131,10 +250,10 @@
           <img src="Assets/logo.png" alt="" />
         </div>
         <ul class="lists flex">
-          <li>Home</li>
-          <li>About</li>
-          <li>Collections</li>
-          <li>Category</li>
+          <a href="#"><li>Home</li></a>
+          <a href="#abt"><li>About</li></a>
+          <a href="#coll"><li>Collections</li></a>
+          <a href="#"><li>Category</li></a>
         </ul>
         <div class="cart">
           <img src="Assets/cart.png" alt="" />
@@ -142,9 +261,15 @@
       </nav>
     </header>
     <div class="social-media">
-      <span>Facebook</span>
-      <span>Instagram</span>
-      <span>Twitter</span>
+      <span
+        ><a href="https://www.facebook.com/" target="_blank">Facebook</a></span
+      >
+      <span
+        ><a href="https://www.instagram.com/" target="_blank"
+          >Instagram</a
+        ></span
+      >
+      <span><a href="https://x.com//" target="_blank">Twitter</a></span>
     </div>
     <div class="container flex">
       <div class="left">
@@ -161,5 +286,79 @@
         <img src="Assets/img.png" alt="" />
       </div>
     </div>
+
+    <!-- About Page -->
+    <section class="center">
+      <h1 id="abt" class="underline">About</h1>
+    </section>
+    <div class="about-Page">
+      <h3>Style That Speaks the Streets</h3>
+      <p>
+        Welcome to Urban Fashion, your go-to destination for bold, trend-forward
+        urban fashion. Born from the heartbeat of the city and inspired by
+        street culture, we blend cutting-edge style with everyday wearability.
+        Since our launch in [Year], we've been on a mission to redefine what it
+        means to dress with attitude. From oversized tees and statement sneakers
+        to limited-edition hoodies and street-ready accessories, every piece in
+        our collection tells a story — your story.
+      </p>
+      <h3>Why We Exist</h3>
+      <p>
+        We believe fashion is more than just clothing — it's a form of
+        self-expression, rebellion, and creativity. At [Your Shop Name], we
+        celebrate individuality and empower our community to wear their truth,
+        unapologetically.
+      </p>
+      <h3>What Makes Us Different</h3>
+      <ul class="lists-todo">
+        <li>
+          Curated Collections: Each drop is handpicked and exclusive — no mass
+          production, no cookie-cutter trends.
+        </li>
+        <li>
+          Quality Over Everything: Streetwear built to last, crafted from
+          premium materials that feel as good as they look.
+        </li>
+        <li>
+          Community First: We support up-and-coming local artists, skaters, and
+          creatives who push boundaries and redefine culture.
+        </li>
+      </ul>
+      <h3>Join the Movement</h3>
+      <p>
+        Whether you're chasing the latest drops or defining your own lane, [Your
+        Shop Name] is where street meets style. Follow us on socials, tag us in
+        your fits, and become part of the squad that's shaping the future of
+        urban fashion.
+      </p>
+    </div>
+    <section id="coll" class="center">
+      <h1 class="underline">Collections</h1>
+    </section>
+    <section class="collection">
+      <div class="card">
+        <img src="Assets/dress1.png" alt="Floral Summer Dress" />
+        <h2>Floral Summer Dress</h2>
+        <p>₹1,499</p>
+      </div>
+
+      <div class="card">
+        <img src="Assets/dress2.jpg" alt="Denim Dungaree Dress" />
+        <h2>Denim Dungaree Dress</h2>
+        <p>₹1,899</p>
+      </div>
+
+      <div class="card">
+        <img src="Assets/dress3.jpg" alt="Party Wear Gown" />
+        <h2>Party Wear Gown</h2>
+        <p>₹2,499</p>
+      </div>
+
+      <div class="card">
+        <img src="Assets/dress4.jpg" alt="Casual Cotton Dress" />
+        <h2>Casual Cotton Dress</h2>
+        <p>₹1,199</p>
+      </div>
+    </section>
   </body>
 </html>
