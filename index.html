@@ -1,0 +1,165 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Martian+Mono:wght@600;700&family=Poppins&family=Roboto+Mono:wght@400;600&display=swap");
+      /* font-family: 'Lilita One', cursive;
+      font-family: 'Martian Mono', monospace;
+      font-family: 'Poppins', sans-serif;
+      font-family: 'Roboto Mono', monospace; */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background-image: url(Assets/background.png);
+        background-size: cover;
+      }
+      header {
+        font-size: 22px;
+        font-family: "Lilita One", cursive;
+        padding: 30px 0;
+      }
+      .flex {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      img {
+        width: 100%;
+      }
+      .logo {
+        width: 140px;
+        animation: delay 1s linear;
+      }
+      .cart {
+        width: 60px;
+        cursor: pointer;
+        animation: delay 3s linear;
+      }
+      .lists {
+        list-style-type: none;
+        width: 60%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 60px;
+        animation: delay 2s linear;
+      }
+      .lists li {
+        transition: 300ms;
+        cursor: pointer;
+      }
+      .lists li:hover {
+        color: rgb(112, 12, 234);
+      }
+      .arrow {
+        margin-top: 40px;
+        width: 40px;
+        gap: 20px;
+        cursor: pointer;
+      }
+      .right {
+        width: 610px;
+        transform: scale(1);
+        animation: scale 3s linear;
+      }
+      .left {
+        margin-left: 100px;
+      }
+      h1 {
+        font-size: 3em;
+        font-family: poppins;
+      }
+      p {
+        margin-top: 12px;
+        font-size: 15px;
+        color: rgb(60, 60, 60);
+        font-family: poppins;
+      }
+      button {
+        padding: 14px;
+        margin: 12px;
+        color: aliceblue;
+        border-radius: 8px;
+        cursor: pointer;
+        border: none;
+        background: linear-gradient(to bottom right, #008cff, #e100ff);
+      }
+      .container {
+        width: 80%;
+        margin: auto;
+      }
+      .social-media {
+        color: rgb(105, 105, 105);
+        position: absolute;
+        left: -3em;
+        transform: rotate(-90deg);
+        bottom: 180px;
+        display: flex;
+        gap: 30px;
+        cursor: pointer;
+      }
+
+      @keyframes delay {
+        0% {
+          transform: translateY(-100px);
+        }
+      }
+      @keyframes scale {
+        0% {
+          transform: scale(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="flex">
+        <div class="logo">
+          <img src="Assets/logo.png" alt="" />
+        </div>
+        <ul class="lists flex">
+          <li>Home</li>
+          <li>About</li>
+          <li>Collections</li>
+          <li>Category</li>
+        </ul>
+        <div class="cart">
+          <img src="Assets/cart.png" alt="" />
+        </div>
+      </nav>
+    </header>
+    <div class="social-media">
+      <span>Facebook</span>
+      <span>Instagram</span>
+      <span>Twitter</span>
+    </div>
+    <div class="container flex">
+      <div class="left">
+        <button>2020 Collections</button>
+        <h1>You Should always <br />feel pretty</h1>
+        <p>Clothes that are sure to heat up your winter</p>
+        <div class="arrow flex">
+          <img src="Assets/back-arrow.png" alt="" />
+          <img src="Assets/next-arrow.png" alt="" />
+        </div>
+      </div>
+
+      <div class="right">
+        <img src="Assets/img.png" alt="" />
+      </div>
+    </div>
+  </body>
+</html>
